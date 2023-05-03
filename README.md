@@ -2,14 +2,16 @@
 
 ## What is this program?
 
-This is a website built using django workframe as one of the capstone project for my Software Enginering bootcamp.Site uses databse driven component.
+This is a website built using django workframe as one of the capstone project for my Software Enginering bootcamp. Site uses databse driven component.
 
 ## Table of Contents
 
 - [Are there any prerequisites?](#are-there-any-prerequisites?)
 - [How can this program be run?](#how-can-this-program-be-run?)
-- [What does this program do specifically?](#what-does-this-program-do-specifically?)
-- [Credits](#credits)
+- [How can this project be build in virtual environment?](#how-can-this-project-be-build-in-virtual-environment?)
+- [How can this project be build using Docker?](#how-can-this-project-be-build-using-docker?)
+- [What are the features of this website?](what-are-the-features-of-this-website?)
+- [Login authentication](#login-authentication)
 - [Comments](#comments)
 
 ## Are there any prerequisites?
@@ -20,19 +22,19 @@ All requirements are listed in requirements.txt file.
 ## How can this program be run?
 All you need to do is to copy this repository with all its files and run it on your machine.
 
-## How can you build this app in virtual environment:
-# Starting new project:
+## How can this project be build in virtual environment (venv)?:
+## Starting new project:
 In command line type:
 1. > python -m pip install pip
 2. > pip install virtualenv
 3. > mkvirtualenv my_django
 4. >pip install django
-5. >django-admin startproject <projectname> - this will start your project and create new directory with several subfolders.
+5. >django-admin startproject projectname - this will start your project and create new directory with several subfolders.
 6. >python manage.py runserver - this command will start your project server.
 7.  Go to http://127.0.0.1:8000/ via your web browser and you will see "Welcome to Django" page which confirms that your installation was sucessfull.
 
-#Starting new app
-1. >python manage.py startapp <appname> - this command created additional directory in your initial project directory. 
+## Starting new app i the project
+1. >python manage.py startapp appname - this command created additional directory in your initial project directory. 
 
 2. Go to settings.py file and add name of your application in INSTALLED_APPS. At this poing it should look like this:
 
@@ -48,7 +50,7 @@ In command line type:
 
 5. Go to views.py in your app directory and define index function as per below
 
-![image](https://user-images.githubusercontent.com/118485184/236038588-25159b3b-5233-4b34-9ffc-d41c881dc062.png)
+![image](https://user-images.githubusercontent.com/118485184/236042044-afd35bf0-035f-45d5-a764-99451a1bd2c4.png)
 
 6. Import HttpsResponse by pasting below code to the top of your your views.py file.
 
@@ -56,12 +58,22 @@ In command line type:
 
 7. >python manage.py runserver - this command will start development server
 
-8. Go to http://127.0.0.1:8000/ - you should be able to see "Hello World" printed.
+8. Go to http://127.0.0.1:8000/ - you should be able to see content of your index.html file
 
-# Rendering HTML
+## Rendering HTML
 1. Inside your app directory create new folder called templates. This is where all html files for this app will be stored
 
-
+## How can this project be build using Docker
+1. Install docker from https://www.docker.com/products/docker-desktop
+2. >docker run hello-world  - this command will verify if Docker has ben installed correctly. If that is the case you will see "Hello from Docker" on your console.
+3. Create file called index.html and put some content in it
+4. In the project folder create Dockerfile (capitalised with no . or extension) and copy below code to it
+  
+  ![image](https://user-images.githubusercontent.com/118485184/236043530-d171251e-fbdc-4816-81cd-44e18704bd09.png)
+  
+5. >docker build -t appname ./
+6. >docker run -i appname
+  
 ## What are the features of this website?
 Website allows user to view content and move between few html functions. User is abale to login into the website shop to see its content. Login details are authenticated.
 
@@ -74,7 +86,14 @@ Authentication is managed by django administration where user names are stored i
 
 ![image](https://user-images.githubusercontent.com/118485184/236030050-84c4f053-8ddb-47de-b8be-2931139ac419.png)
 
-
-
 ## Comments:
 Please note that registration function is not yet working and this is the next step in this project.
+
+Below buttons are functional:
+
+a. Login to shop
+
+b. Lego history and timeline
+
+c. Lego on youtube and links to relevant youtube channels
+
